@@ -1,0 +1,245 @@
+body {
+  margin: 0px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+}
+a {
+  display: block; /*將a設置為區塊元素使其可以設定內邊距*/
+  color: black;
+  text-decoration: none; /*移除超連結的下底線*/
+}
+a:hover {
+  background-color: #ffffff; /*當滑鼠懸停在上面時，改變背景顏色*/
+}
+h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+p {
+  font-size: 1.1rem;
+  margin: 0px 20px 0px 20px;
+  padding: 0px 0px 25px 0px;
+  line-height: 40px;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0px 20px 0px;
+  text-shadow: 1px 1px 0px #888888;
+}
+header {
+  justify-content: center; /*主軸對齊內容：置中對齊*/
+  align-items: center; /*次軸對齊項目：置中對齊*/
+  text-align: center; /*文字對齊(行內內容)：置中對齊*/
+  font-size: 2rem; /*字體大小*/
+  font-weight: bold; /*粗體*/
+  line-height: 100px; /*行高*/
+  background-color: #223344 /*區塊背景色*/;
+  color: #ffffff; /*文字顏色*/
+  width: 100%; /*區塊寬：父層的100%*/
+  height: 100px; /*區塊高*/
+}
+nav {
+  padding: 0px; /*設置導航條內部的內邊距（padding），使內容不會貼在邊緣，增加了 10 像素的空間。*/
+  width: 100%;
+  margin: 0px;
+  background-color: #ffffff;
+  color: black;
+  position: relative; /* 確保 z-index 生效 */
+  z-index: 999; /* 讓整個導航條位於較高的層級 */
+}
+nav div {
+  display: flex;
+  justify-content: left; /*主軸對齊內容：置中對齊*/
+  align-items: center;
+}
+.ul-01 {
+  list-style-type: none; /*移除 ul（無序列表）的項目符號*/
+  display: flex; /*水平排列<li>*/
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.ul-01 li {
+  display: inline-block; /*將li元素設置為 inline-block，使其水平排列，同時可以設置寬高*/
+  position: relative; /*相對定位*/
+  justify-content: left;
+  align-items: left;
+}
+.ul-02-02{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  width: 1000px;
+}
+.ul-02 {
+  display: none; /*預設隱藏菜單*/
+  position: absolute; /*絕對位置*/
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  top: 100%; /*放置在父元素垂直方向移動100%*/
+  left: 25px; /*左側切齊父元素*/
+  padding: 10px;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  background-color: #ffffff;
+  /*min-width: 150px; /*最小寬度設為150px*/
+}
+.ul-01 li:hover > .ul-02 {
+  /*當鼠標懸停在 li 元素上時，顯示其下的嵌套 ul 元素（即下拉選單）。這是使用 :hover 偽類來觸發顯示。*/
+  display: block;
+}
+.ul-02 li {
+  display: block; /*將下拉選單中的每個 li 設置為塊級元素，使其每個選項顯示在新的一行上。*/
+  justify-content: left;
+  align-items: left;
+  flex: 30%;
+}
+.ul-02 li a {
+  padding: 5px;
+  white-space: nowrap; /*防止選項文字換行，讓每個選項在一行內顯示。*/
+}
+.ul-02 li a:hover {
+  background-color: #ffffff; /*當鼠標懸停在下拉選單中的鏈接上時，背景顏色變為與主菜單鏈接相同的灰色。*/
+}
+nav img {
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px 0px 0px;
+}
+.carousel-outer {
+  position: static;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel {
+  position: relative;
+}
+.carousel div {
+  position: absolute;
+  width: 100%;
+  animation: img-fade 12s infinite;
+  z-index: 0;
+}
+.carousel h6 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+}
+.carousel img {
+  width: 100%;
+  object-fit: cover;
+}
+.carousel div:nth-child(1) {
+  animation-delay: 0s;
+}
+.carousel div:nth-child(2) {
+  animation-delay: 6s;
+}
+@keyframes img-fade {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.main-01 {
+  display: grid; /* 使用 grid */
+  grid-template-rows: 30% 70%; /* 第一行占30%，第二行占70% */
+  place-items: center; /* 水平和垂直置中 */
+  align-items: center;
+  text-align: center;
+  background-color: #eeeeee;
+  margin: 0px;
+  padding: 10px;
+  height: 300px;
+}
+.media {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  max-width: 1480px;
+}
+.main-02 {
+  display: grid; /* 使用 grid */
+  grid-template-rows: 20% 80%; /* 第一行占30%，第二行占70% */
+  place-items: center; /* 水平和垂直置中 */
+  align-items: center;
+  text-align: center;
+  background-color: #eeeeee;
+  margin: 0px;
+  padding: 30px;
+}
+.main-02 img {
+  border-radius: 50%;
+  width: 400px;
+}
+.main-03 {
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(187, 192, 195);
+  margin: 0px;
+  padding: 35px 0px 45px 0px;
+}
+.main-03 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main-04 {
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(221, 221, 221);
+  margin: 0px;
+  padding: 35px 0px 45px 0px;
+}
+footer {
+  text-align: center;
+  background-color: #223344;
+  color: #ffffff;
+  padding: 30px 0px 70px 0px;
+  font-size: 1.2rem;
+}
+footer a {
+  display: inline-block;
+  text-decoration: none;
+  color: #888888;
+  font-weight: bold;
+}
+footer a:hover {
+  background-color: #223344;
+  color: white;
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  /*螢幕寬度等於500~1250px時，套用這區的css*/
+  .media {
+    display: block;
+  }
+}
+@media (min-width: 0px) and (max-width: 600px) {
+  /*螢幕寬度等於0~500px時，套用這區的css*/
+}
